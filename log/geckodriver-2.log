@@ -1,0 +1,17 @@
+1702873821279	geckodriver	INFO	Listening on 127.0.0.1:62883
+1702873824325	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62884" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\YASHSH~1.MIT\\AppData\\Local\\Temp\\rust_mozprofileyIszRy"
+console.error: GPOParser.jsm: 
+  Unable to parse JSON for Preferences
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "localhost" - not a valid origin.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1702873827504	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1702873828411	Marionette	INFO	Listening on port 62919
+WebDriver BiDi listening on ws://127.0.0.1:62884
+Read port: 62919
+1702873828798	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:62884/devtools/browser/5221946e-576a-45d4-ad30-af733a647143
+1702873836698	Marionette	INFO	Stopped listening on port 62919
+Dynamically enable window occlusion 1

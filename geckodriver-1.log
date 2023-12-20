@@ -1,0 +1,19 @@
+1702875917360	geckodriver	INFO	Listening on 127.0.0.1:60880
+1702875920539	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60881" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\YASHSH~1.MIT\\AppData\\Local\\Temp\\rust_mozprofilej059NW"
+console.error: GPOParser.jsm: 
+  Unable to parse JSON for Preferences
+console.error: JsonSchemaValidator.jsm: 
+  Ignoring parameter "localhost" - not a valid origin.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1702875922442	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1702875922925	Marionette	INFO	Listening on port 60900
+WebDriver BiDi listening on ws://127.0.0.1:60881
+Read port: 60900
+1702875923224	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:60881/devtools/browser/62675c7a-8d3f-49b2-b172-5c8cb83ec901
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://accounts.google.com."
+1702875939581	Marionette	INFO	Stopped listening on port 60900
+Dynamically enable window occlusion 1
+!!! error running onStopped callback: TypeError: callback is not a function

@@ -1,6 +1,8 @@
 import random
 
 from robot.libraries.BuiltIn import BuiltIn
+from appium.webdriver.common.touch_action import TouchAction
+
 
 seleniumLib = BuiltIn().get_library_instance('SeleniumLibrary')
 allureLib = BuiltIn().get_library_instance('AllureLibrary')
@@ -24,3 +26,11 @@ def capture_screenshot():
     fileName = f"selenium-{randomNum}.png"
     seleniumLib.capture_page_screenshot(fileName)
     allureLib.attach_file(f'./{fileName}')
+
+def drag_drop(self, sourcelocator, targetlocator, duration=1000):
+        driver= self._current_application()
+        sourceelement = self._element_find(sourcelocator, True, True)
+        targetelement = self._element_find(targetlocator, True, True)
+        action = TouchAction(driver)
+        action.press(sourceelement).wait(duration).move_to(targetelement).perform().release()
+

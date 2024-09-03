@@ -5,5 +5,5 @@ browserstack-local
 browserstack-sdk
 selenium-robot
 robot
-pabot
+robotframework-pabot
 robotframework-seleniumlibrary

@@ -4,3 +4,6 @@ robotframework-pabot
 browserstack-local
 browserstack-sdk
 selenium-robot
+robot
+pabot
+robotframework-seleniumlibrary

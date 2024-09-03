@@ -1,0 +1,56 @@
+
+00:23:18 [browserstack_sdk.__init__][INFO] - Setting up for Browserstack, using framework: robot
+==============================================================================
+FindNewCarsTest DataDriven                                                    
+==============================================================================
+Find New Toyota Car Test                                              
+00:23:28 [browserstack_sdk.__init__][INFO] - Completed setup!
+| FAIL |
+Invalid IF condition: Evaluating expression 'Toyota == "Toyota"' failed: NameError: name 'Toyota' is not defined nor importable as module
+
+Variables in the original expression '${brandname} == "Toyota"' were resolved before the expression was evaluated. Try using '$brandname == "Toyota"' syntax to avoid that. See Evaluating Expressions appendix in Robot Framework User Guide for more details.
+------------------------------------------------------------------------------
+Find New Kia Car Test                                                 
+00:23:54 [browserstack_sdk.__init__][INFO] - Completed setup!
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:36
+    T:  Find New Kia Car Test    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:0
+      Find New Cars    firefox    Kia    Kia Cars
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:20
+      Launching Browser    ${testsiteurl}    ${browser}
+      |  ${testsiteurl} = https://carwale.com/ (str)
+      |  ${browser} = <Unable to define variable value>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\Resources\commons.resource:9
+      Open Browser    ${url}    ${browserName}
+      |  ${url} = https://carwale.com/ (str)
+      |  ${browserName} = firefox (str)
+______________________________________________________________________________
+| FAIL |
+WebDriverException: Message: Could not start Browser / Emulator
+ Reason: 
+Unable to create new remote session. desired capabilities = Capabilities {browserName: safari, moz:firefoxOptions: {binary: C:\Program Files\Mozilla Fi..., profile: [REDACTED]}, pageLoadStrategy: normal}
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:13:22.693Z'
+System info: host: 'mac-209-10-151-58.browserstack.com', ip: 'fe80:0:0:0:1cbd:ce65:a0d3:9dd0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '11.0.13'
+Driver info: driver.version: unknown
+------------------------------------------------------------------------------
+Find New BMW Car Test                                                 
+00:24:20 [browserstack_sdk.__init__][INFO] - Completed setup!
+| FAIL |
+Invalid IF condition: Evaluating expression 'BMW == "Toyota"' failed: NameError: name 'BMW' is not defined nor importable as module
+
+Variables in the original expression '${brandname} == "Toyota"' were resolved before the expression was evaluated. Try using '$brandname == "Toyota"' syntax to avoid that. See Evaluating Expressions appendix in Robot Framework User Guide for more details.
+------------------------------------------------------------------------------
+FindNewCarsTest DataDriven                                            | FAIL |
+3 tests, 0 passed, 3 failed
+==============================================================================
+Output:  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\pabot_results\1\output.xml
+
+00:24:40 [browserstack_sdk.__init__][INFO] - Handling session close
+
+00:24:40 [browserstack_sdk.__init__][INFO] - All done!

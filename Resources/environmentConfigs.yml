@@ -1,0 +1,7 @@
+### Environment #### (LOCAL, BROWSERSTACK, GRID)
+environment=LOCAL
+### Language ### (EN, FR)
+LANGUAGE=EN
+### Browser ### (Chrome,Firefox, Safari, Edge)
+Browser=Chrome
+###

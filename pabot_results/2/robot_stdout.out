@@ -1,0 +1,76 @@
+
+00:23:19 [browserstack_sdk.__init__][INFO] - Setting up for Browserstack, using framework: robot
+==============================================================================
+FindNewCarsTest DataDriven                                                    
+==============================================================================
+Find New Toyota Car Test                                              
+00:23:28 [browserstack_sdk.__init__][INFO] - Completed setup!
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:36
+    T:  Find New Toyota Car Test    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:0
+      Find New Cars    chrome    Toyota    Toyota Cars
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:22
+      Go to new car page    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\pageObjects\HomePage.resource:7
+      Mouse Over    ${newcar_xpath}
+      |  ${newcar_xpath} = //div[normalize-space()='NEW CARS'] (str)
+______________________________________________________________________________
+| FAIL |
+Element with locator '//div[normalize-space()='NEW CARS']' not found.
+------------------------------------------------------------------------------
+Find New Kia Car Test                                                 
+00:24:01 [browserstack_sdk.__init__][INFO] - Completed setup!
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:36
+    T:  Find New Kia Car Test    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:0
+      Find New Cars    firefox    Kia    Kia Cars
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:22
+      Go to new car page    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\pageObjects\HomePage.resource:7
+      Mouse Over    ${newcar_xpath}
+      |  ${newcar_xpath} = //div[normalize-space()='NEW CARS'] (str)
+______________________________________________________________________________
+| FAIL |
+Element with locator '//div[normalize-space()='NEW CARS']' not found.
+------------------------------------------------------------------------------
+Find New BMW Car Test                                                 
+00:24:42 [browserstack_sdk.__init__][INFO] - Completed setup!
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:36
+    T:  Find New BMW Car Test    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:0
+      Find New Cars    chrome    BMW    BMW Cars
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot:22
+      Go to new car page    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\pageObjects\HomePage.resource:7
+      Mouse Over    ${newcar_xpath}
+      |  ${newcar_xpath} = //div[normalize-space()='NEW CARS'] (str)
+______________________________________________________________________________
+| FAIL |
+Element with locator '//div[normalize-space()='NEW CARS']' not found.
+------------------------------------------------------------------------------
+FindNewCarsTest DataDriven                                            | FAIL |
+3 tests, 0 passed, 3 failed
+==============================================================================
+Output:  C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\pabot_results\2\output.xml
+
+00:25:08 [browserstack_sdk.__init__][INFO] - Handling session close
+
+00:25:08 [browserstack_sdk.__init__][INFO] - All done!

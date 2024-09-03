@@ -1,0 +1,335 @@
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240902 00:23:18.945" rpa="false" schemaversion="4">
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="FindNewCarsTest DataDriven">FindNewCarsTest DataDriven</stat>
+</suite>
+</statistics>
+<suite name="Suites" id="s0"><suite id="s1" name="FindNewCarsTest DataDriven OS X, Monterey, Safari, 15.6" source="C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot">
+<test id="s1-t1" name="Find New Toyota Car Test" line="36">
+<kw name="Find New Cars">
+<arg>chrome</arg>
+<arg>Toyota</arg>
+<arg>Toyota Cars</arg>
+<kw name="Launching Browser" library="commons">
+<arg>${testsiteurl}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240902 00:23:22.529" level="INFO">Opening browser 'chrome' to base url 'https://carwale.com/'.</msg>
+<msg timestamp="20240902 00:23:28.528" level="INFO">Completed setup!</msg>
+<status status="PASS" starttime="20240902 00:23:22.529" endtime="20240902 00:23:42.325" />
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240902 00:23:42.325" endtime="20240902 00:23:42.577" />
+</kw>
+<kw name="Log Title" library="SeleniumLibrary">
+<doc>Logs and returns the title of the current page.</doc>
+<msg timestamp="20240902 00:23:42.713" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
+<status status="PASS" starttime="20240902 00:23:42.577" endtime="20240902 00:23:42.713" />
+</kw>
+<status status="PASS" starttime="20240902 00:23:22.525" endtime="20240902 00:23:42.713" />
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240902 00:23:42.713" endtime="20240902 00:23:42.936" />
+</kw>
+<kw name="Go to new car page" library="HomePage">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${newcar_xpath}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240902 00:23:42.936" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
+<status status="PASS" starttime="20240902 00:23:42.936" endtime="20240902 00:23:43.557" />
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${findnewcar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240902 00:23:43.562" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
+<status status="PASS" starttime="20240902 00:23:43.557" endtime="20240902 00:23:44.029" />
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${newcar_header_xpath}</arg>
+<arg>New Cars</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240902 00:23:44.031" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
+<status status="PASS" starttime="20240902 00:23:44.029" endtime="20240902 00:23:45.196" />
+</kw>
+<status status="PASS" starttime="20240902 00:23:42.936" endtime="20240902 00:23:45.196" />
+</kw>
+<if>
+<branch type="IF" condition="${brandname} == &quot;Toyota&quot;">
+<kw name="Go to Toyota" library="NewCarPage">
+<status status="NOT RUN" starttime="20240902 00:23:45.196" endtime="20240902 00:23:45.196" />
+</kw>
+<msg timestamp="20240902 00:23:45.196" level="FAIL">Invalid IF condition: Evaluating expression 'Toyota == "Toyota"' failed: NameError: name 'Toyota' is not defined nor importable as module
+
+Variables in the original expression '${brandname} == "Toyota"' were resolved before the expression was evaluated. Try using '$brandname == "Toyota"' syntax to avoid that. See Evaluating Expressions appendix in Robot Framework User Guide for more details.</msg>
+<status status="FAIL" starttime="20240902 00:23:45.196" endtime="20240902 00:23:45.196" />
+</branch>
+<branch type="ELSE IF" condition="${brandname} == &quot;BMW&quot;">
+<kw name="Go to BMW" library="NewCarPage">
+<status status="NOT RUN" starttime="20240902 00:23:45.196" endtime="20240902 00:23:45.196" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:23:45.196" endtime="20240902 00:23:45.196" />
+</branch>
+<branch type="ELSE IF" condition="${brandname} == &quot;Kia&quot;">
+<kw name="Go to Kia" library="NewCarPage">
+<status status="NOT RUN" starttime="20240902 00:23:45.196" endtime="20240902 00:23:45.196" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:23:45.196" endtime="20240902 00:23:45.196" />
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Invalid car selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240902 00:23:45.204" endtime="20240902 00:23:45.204" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:23:45.204" endtime="20240902 00:23:45.204" />
+</branch>
+<status status="FAIL" starttime="20240902 00:23:45.196" endtime="20240902 00:23:45.204" />
+</if>
+<kw name="Verify Car heading" library="CarBase">
+<arg>${carheading}</arg>
+<status status="NOT RUN" starttime="20240902 00:23:45.204" endtime="20240902 00:23:45.204" />
+</kw>
+<status status="FAIL" starttime="20240902 00:23:22.525" endtime="20240902 00:23:45.205" />
+</kw>
+<kw name="Finish Test Case" library="commons" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Ending the test case</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240902 00:23:45.205" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240902 00:23:45.205" endtime="20240902 00:23:45.205" />
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240902 00:23:45.205" endtime="20240902 00:23:45.205" />
+</kw>
+<status status="PASS" starttime="20240902 00:23:45.205" endtime="20240902 00:23:45.205" />
+</kw>
+<status status="FAIL" starttime="20240902 00:23:22.521" endtime="20240902 00:23:45.205">Invalid IF condition: Evaluating expression 'Toyota == "Toyota"' failed: NameError: name 'Toyota' is not defined nor importable as module
+
+Variables in the original expression '${brandname} == "Toyota"' were resolved before the expression was evaluated. Try using '$brandname == "Toyota"' syntax to avoid that. See Evaluating Expressions appendix in Robot Framework User Guide for more details.</status>
+</test>
+<test id="s1-t2" name="Find New Kia Car Test" line="36">
+<kw name="Find New Cars">
+<arg>firefox</arg>
+<arg>Kia</arg>
+<arg>Kia Cars</arg>
+<kw name="Launching Browser" library="commons">
+<arg>${testsiteurl}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240902 00:23:46.912" level="INFO">Opening browser 'firefox' to base url 'https://carwale.com/'.</msg>
+<msg timestamp="20240902 00:23:54.488" level="INFO">Completed setup!</msg>
+<msg timestamp="20240902 00:24:16.269" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240902 00:24:16.269" level="FAIL">WebDriverException: Message: Could not start Browser / Emulator
+ Reason: 
+Unable to create new remote session. desired capabilities = Capabilities {browserName: safari, moz:firefoxOptions: {binary: C:\Program Files\Mozilla Fi..., profile: [REDACTED]}, pageLoadStrategy: normal}
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:13:22.693Z'
+System info: host: 'mac-209-10-151-58.browserstack.com', ip: 'fe80:0:0:0:1cbd:ce65:a0d3:9dd0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '11.0.13'
+Driver info: driver.version: unknown
+</msg>
+<status status="FAIL" starttime="20240902 00:23:46.912" endtime="20240902 00:24:16.392" />
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" starttime="20240902 00:24:16.398" endtime="20240902 00:24:16.398" />
+</kw>
+<kw name="Log Title" library="SeleniumLibrary">
+<doc>Logs and returns the title of the current page.</doc>
+<status status="NOT RUN" starttime="20240902 00:24:16.398" endtime="20240902 00:24:16.398" />
+</kw>
+<status status="FAIL" starttime="20240902 00:23:46.912" endtime="20240902 00:24:16.398" />
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240902 00:24:16.398" endtime="20240902 00:24:16.398" />
+</kw>
+<kw name="Go to new car page" library="HomePage">
+<status status="NOT RUN" starttime="20240902 00:24:16.398" endtime="20240902 00:24:16.398" />
+</kw>
+<if>
+<branch type="IF" condition="${brandname} == &quot;Toyota&quot;">
+<kw name="Go to Toyota" library="NewCarPage">
+<status status="NOT RUN" starttime="20240902 00:24:16.398" endtime="20240902 00:24:16.398" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:24:16.398" endtime="20240902 00:24:16.407" />
+</branch>
+<branch type="ELSE IF" condition="${brandname} == &quot;BMW&quot;">
+<kw name="Go to BMW" library="NewCarPage">
+<status status="NOT RUN" starttime="20240902 00:24:16.407" endtime="20240902 00:24:16.407" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:24:16.407" endtime="20240902 00:24:16.407" />
+</branch>
+<branch type="ELSE IF" condition="${brandname} == &quot;Kia&quot;">
+<kw name="Go to Kia" library="NewCarPage">
+<status status="NOT RUN" starttime="20240902 00:24:16.407" endtime="20240902 00:24:16.407" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:24:16.407" endtime="20240902 00:24:16.407" />
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Invalid car selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240902 00:24:16.412" endtime="20240902 00:24:16.413" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:24:16.407" endtime="20240902 00:24:16.413" />
+</branch>
+<status status="NOT RUN" starttime="20240902 00:24:16.398" endtime="20240902 00:24:16.413" />
+</if>
+<kw name="Verify Car heading" library="CarBase">
+<arg>${carheading}</arg>
+<status status="NOT RUN" starttime="20240902 00:24:16.413" endtime="20240902 00:24:16.414" />
+</kw>
+<status status="FAIL" starttime="20240902 00:23:46.912" endtime="20240902 00:24:16.414" />
+</kw>
+<kw name="Finish Test Case" library="commons" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Ending the test case</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240902 00:24:16.417" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240902 00:24:16.417" endtime="20240902 00:24:16.417" />
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240902 00:24:16.417" endtime="20240902 00:24:16.417" />
+</kw>
+<status status="PASS" starttime="20240902 00:24:16.414" endtime="20240902 00:24:16.417" />
+</kw>
+<status status="FAIL" starttime="20240902 00:23:46.911" endtime="20240902 00:24:16.417">WebDriverException: Message: Could not start Browser / Emulator
+ Reason: 
+Unable to create new remote session. desired capabilities = Capabilities {browserName: safari, moz:firefoxOptions: {binary: C:\Program Files\Mozilla Fi..., profile: [REDACTED]}, pageLoadStrategy: normal}
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:13:22.693Z'
+System info: host: 'mac-209-10-151-58.browserstack.com', ip: 'fe80:0:0:0:1cbd:ce65:a0d3:9dd0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '11.0.13'
+Driver info: driver.version: unknown
+</status>
+</test>
+<test id="s1-t3" name="Find New BMW Car Test" line="36">
+<kw name="Find New Cars">
+<arg>chrome</arg>
+<arg>BMW</arg>
+<arg>BMW Cars</arg>
+<kw name="Launching Browser" library="commons">
+<arg>${testsiteurl}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240902 00:24:16.422" level="INFO">Opening browser 'chrome' to base url 'https://carwale.com/'.</msg>
+<msg timestamp="20240902 00:24:20.374" level="INFO">Completed setup!</msg>
+<status status="PASS" starttime="20240902 00:24:16.422" endtime="20240902 00:24:36.335" />
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240902 00:24:36.335" endtime="20240902 00:24:36.681" />
+</kw>
+<kw name="Log Title" library="SeleniumLibrary">
+<doc>Logs and returns the title of the current page.</doc>
+<msg timestamp="20240902 00:24:36.871" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
+<status status="PASS" starttime="20240902 00:24:36.681" endtime="20240902 00:24:36.871" />
+</kw>
+<status status="PASS" starttime="20240902 00:24:16.422" endtime="20240902 00:24:36.871" />
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240902 00:24:36.871" endtime="20240902 00:24:37.130" />
+</kw>
+<kw name="Go to new car page" library="HomePage">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${newcar_xpath}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240902 00:24:37.132" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
+<status status="PASS" starttime="20240902 00:24:37.132" endtime="20240902 00:24:37.748" />
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${findnewcar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240902 00:24:37.748" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
+<status status="PASS" starttime="20240902 00:24:37.748" endtime="20240902 00:24:38.452" />
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${newcar_header_xpath}</arg>
+<arg>New Cars</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240902 00:24:38.454" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
+<status status="PASS" starttime="20240902 00:24:38.454" endtime="20240902 00:24:39.256" />
+</kw>
+<status status="PASS" starttime="20240902 00:24:37.130" endtime="20240902 00:24:39.258" />
+</kw>
+<if>
+<branch type="IF" condition="${brandname} == &quot;Toyota&quot;">
+<kw name="Go to Toyota" library="NewCarPage">
+<status status="NOT RUN" starttime="20240902 00:24:39.260" endtime="20240902 00:24:39.260" />
+</kw>
+<msg timestamp="20240902 00:24:39.260" level="FAIL">Invalid IF condition: Evaluating expression 'BMW == "Toyota"' failed: NameError: name 'BMW' is not defined nor importable as module
+
+Variables in the original expression '${brandname} == "Toyota"' were resolved before the expression was evaluated. Try using '$brandname == "Toyota"' syntax to avoid that. See Evaluating Expressions appendix in Robot Framework User Guide for more details.</msg>
+<status status="FAIL" starttime="20240902 00:24:39.258" endtime="20240902 00:24:39.260" />
+</branch>
+<branch type="ELSE IF" condition="${brandname} == &quot;BMW&quot;">
+<kw name="Go to BMW" library="NewCarPage">
+<status status="NOT RUN" starttime="20240902 00:24:39.260" endtime="20240902 00:24:39.261" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:24:39.260" endtime="20240902 00:24:39.261" />
+</branch>
+<branch type="ELSE IF" condition="${brandname} == &quot;Kia&quot;">
+<kw name="Go to Kia" library="NewCarPage">
+<status status="NOT RUN" starttime="20240902 00:24:39.261" endtime="20240902 00:24:39.262" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:24:39.261" endtime="20240902 00:24:39.262" />
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Invalid car selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240902 00:24:39.262" endtime="20240902 00:24:39.263" />
+</kw>
+<status status="NOT RUN" starttime="20240902 00:24:39.262" endtime="20240902 00:24:39.263" />
+</branch>
+<status status="FAIL" starttime="20240902 00:24:39.258" endtime="20240902 00:24:39.263" />
+</if>
+<kw name="Verify Car heading" library="CarBase">
+<arg>${carheading}</arg>
+<status status="NOT RUN" starttime="20240902 00:24:39.263" endtime="20240902 00:24:39.264" />
+</kw>
+<status status="FAIL" starttime="20240902 00:24:16.422" endtime="20240902 00:24:39.264" />
+</kw>
+<kw name="Finish Test Case" library="commons" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Ending the test case</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240902 00:24:39.266" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240902 00:24:39.265" endtime="20240902 00:24:39.266" />
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240902 00:24:39.266" endtime="20240902 00:24:39.266" />
+</kw>
+<status status="PASS" starttime="20240902 00:24:39.265" endtime="20240902 00:24:39.266" />
+</kw>
+<status status="FAIL" starttime="20240902 00:24:16.417" endtime="20240902 00:24:39.266">Invalid IF condition: Evaluating expression 'BMW == "Toyota"' failed: NameError: name 'BMW' is not defined nor importable as module
+
+Variables in the original expression '${brandname} == "Toyota"' were resolved before the expression was evaluated. Try using '$brandname == "Toyota"' syntax to avoid that. See Evaluating Expressions appendix in Robot Framework User Guide for more details.</status>
+</test>
+<status status="FAIL" starttime="20240902 00:23:18.955" endtime="20240902 00:24:40.953" />
+</suite>
+<status status="FAIL" starttime="20240902 00:23:18.955" endtime="20240902 00:24:40.953" />
+</suite><errors>
+<msg timestamp="20240902 00:23:19.082" level="ERROR">Error in file 'C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\Resources\commons.resource' on line 4: Setting 'Suite Teardown' is not allowed in resource file.</msg>
+</errors>
+</robot>

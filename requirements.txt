@@ -8,3 +8,4 @@ robotframework
 robot
 robotframework-pabot
 robotframework-seleniumlibrary
+robotframework-datadriver

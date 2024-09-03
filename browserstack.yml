@@ -6,10 +6,10 @@ platforms:
     osVersion: 10
     browserName: Chrome
     browserVersion: 120.0
-  - os: OS X
-    osVersion: Monterey
-    browserName: Safari
-    browserVersion: 15.6
+  # - os: OS X
+  #   osVersion: Monterey
+  #   browserName: Safari
+  #   browserVersion: 15.6
 parallelsPerPlatform: 1
 browserstackLocal: true
 buildName: bstack-robot-demo

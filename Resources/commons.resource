@@ -1,7 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 
-Suite Teardown    Close All Browsers
+#Suite Teardown    Close All Browsers
 
 **** Keywords ***
 Launching Browser

@@ -20,11 +20,11 @@ Find New Cars
     Launching Browser    ${testsiteurl}    ${browser}
     Maximize Browser Window
     Go to new car page
-    IF    ${brandname} == "Toyota"
+    IF    '${brandname}' == 'Toyota'
     Go to Toyota
-    ELSE IF     ${brandname} == "BMW"
+    ELSE IF     '${brandname}' == 'BMW'
     Go to BMW
-    ELSE IF     ${brandname} == "Kia"
+    ELSE IF     '${brandname}' == 'Kia'
     Go to Kia
     ELSE
         Log To Console    Invalid car selected

@@ -1,0 +1,62 @@
+name: 'CI browserstack Robot master'
+on:
+    workflow_dispatch:
+      inputs:
+        browser:
+          type: choice
+          description: 'browser (Chrome/Safari/Edge/Firefox)'
+          required: false
+          default: chrome
+          options:
+            - chrome
+            - safari
+            - edge
+            - firefox
+        tests:
+          type: choice
+          default: all
+          options:
+            - UI Test cases
+            - API Test Cases
+            - Mobile Test Cases
+            - all
+          description: 'Tests (no file extension needed)'
+          required: false
+        language:
+          type: choice
+          description: 'language'
+          required: false
+          options:
+            - english
+            - french
+
+permissions:
+    contents: write
+
+jobs:
+  ubuntu-job:
+    name: 'BrowserStack Test on Ubuntu'
+    runs-on: ubuntu-latest  # Can be self-hosted runner also
+    steps:
+      - name: 'BrowserStack Env Setup'  # Invokes the setup-env action
+        uses: browserstack/github-actions/setup-env@master
+        with:
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          build-name: 'BUILD_DEMO'
+          project-name: 'DEMO'
+      - name: 'BrowserStack Local Tunnel Setup'  # Invokes the setup-local action
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-testing: start
+          local-identifier: random
+      - name: 'Checkout the repository'
+        uses: actions/checkout@v2
+      - name: 'Building the framework'
+        run: pip install -r requirements.txt
+      - name: 'Execute Tests'
+        run: browserstack-sdk robot ./testScripts/uiTestCases/FindNewCarsTest_DataDriven.robot
+      - name: 'BrowserStackLocal Stop'  # Terminating the BrowserStackLocal tunnel connection
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-testing: stop

@@ -1,0 +1,24 @@
+userName: yashshvimittal_dODRYg
+accessKey: 4mxThL7TcWipJwJTfb3y
+framework: robot
+platforms:
+  - os: Windows
+    osVersion: 10
+    browserName: Chrome
+    browserVersion: 120.0
+  - os: OS X
+    osVersion: Monterey
+    browserName: Safari
+    browserVersion: 15.6
+  - deviceName: iPhone 13
+    osVersion: 15
+    browserName: Chromium
+    deviceOrientation: portrait
+parallelsPerPlatform: 1
+browserstackLocal: true
+buildName: bstack-robot-demo
+buildIdentifier: ${BUILD_NUMBER}
+projectName: BrowserStack Robot
+debug: true
+networkLogs: true
+consoleLogs: info

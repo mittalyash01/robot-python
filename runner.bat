@@ -8,5 +8,6 @@
 #pip install robotframework-databaselibrary
 #pip install robotframework-appiumlibrary
 #pip install robotframework-requests
+#pip install robotframework-jira
 #rfbrowser init
 pabot --processes 3  -d Results .\testCases

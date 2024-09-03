@@ -1,6 +1,5 @@
-robot-framework-pabot
 robotframework-datadriver
-robotframework-pabot
+robotframework-pabot==1.13
 robotframework-seleniumlibrary
 robotframework-datadriver[XLS]
 allure-robotframework

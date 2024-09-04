@@ -1,7 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240903 18:27:01.018" rpa="false" schemaversion="4">
-<suite id="s1" name="FindNewCarsTest DataDriven" source="C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot">
-<test id="s1-t1" name="Find New Toyota Car Test" line="36">
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240903 19:15:29.514" rpa="false" schemaversion="4">
+<suite id="s1" name="FindNewCarsTest &amp; FindNewCarsTest DataDriven &amp; getCarNameTest">
+<suite id="s1-s1" name="FindNewCarsTest" source="C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest.robot">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>Started</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:15:30.198" endtime="20240903 19:15:30.199"/>
+</kw>
+<test id="s1-s1-t1" name="Find New Cars Test" line="15">
+<kw name="Launching Browser" library="commons">
+<arg>${testsiteurl}</arg>
+<arg>chrome</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240903 19:15:30.200" level="INFO">Opening browser 'chrome' to base url 'https://carwale.com/'.</msg>
+<status status="PASS" starttime="20240903 19:15:30.200" endtime="20240903 19:15:50.044"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240903 19:15:50.045" endtime="20240903 19:15:50.053"/>
+</kw>
+<kw name="Log Title" library="SeleniumLibrary">
+<doc>Logs and returns the title of the current page.</doc>
+<msg timestamp="20240903 19:15:50.075" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
+<status status="PASS" starttime="20240903 19:15:50.054" endtime="20240903 19:15:50.076"/>
+</kw>
+<status status="PASS" starttime="20240903 19:15:30.200" endtime="20240903 19:15:50.076"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240903 19:15:50.077" endtime="20240903 19:15:50.152"/>
+</kw>
+<kw name="Go to new car page" library="HomePage">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${newcar_xpath}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240903 19:15:50.155" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
+<status status="PASS" starttime="20240903 19:15:50.154" endtime="20240903 19:15:50.495"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${findnewcar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:15:50.497" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
+<status status="PASS" starttime="20240903 19:15:50.495" endtime="20240903 19:15:50.726"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${newcar_header_xpath}</arg>
+<arg>New Cars</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240903 19:15:50.728" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
+<status status="PASS" starttime="20240903 19:15:50.727" endtime="20240903 19:15:51.560"/>
+</kw>
+<status status="PASS" starttime="20240903 19:15:50.152" endtime="20240903 19:15:51.560"/>
+</kw>
+<kw name="Go to BMW" library="NewCarPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BMWcar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:15:51.561" level="INFO">Clicking element '//div[normalize-space()='BMW']'.</msg>
+<status status="PASS" starttime="20240903 19:15:51.560" endtime="20240903 19:15:51.671"/>
+</kw>
+<status status="PASS" starttime="20240903 19:15:51.560" endtime="20240903 19:15:51.671"/>
+</kw>
+<kw name="Verify Car heading" library="CarBase">
+<arg>BMW Cars</arg>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${carheading_xpath}</arg>
+<arg>${carheading}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240903 19:15:51.672" level="INFO">Verifying element '//*[@id='root']/div[3]/div/div/div//h1' contains exact text 'BMW Cars'.</msg>
+<status status="PASS" starttime="20240903 19:15:51.672" endtime="20240903 19:15:52.563"/>
+</kw>
+<status status="PASS" starttime="20240903 19:15:51.671" endtime="20240903 19:15:52.563"/>
+</kw>
+<status status="PASS" starttime="20240903 19:15:30.199" endtime="20240903 19:15:52.563"/>
+</test>
+<kw name="Finish Test Case" library="commons" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Ending the test case</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240903 19:15:52.565" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240903 19:15:52.565" endtime="20240903 19:15:52.565"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240903 19:15:52.565" endtime="20240903 19:15:55.750"/>
+</kw>
+<status status="PASS" starttime="20240903 19:15:52.564" endtime="20240903 19:15:55.750"/>
+</kw>
+<status status="PASS" starttime="20240903 19:15:29.574" endtime="20240903 19:15:55.750"/>
+</suite>
+<suite id="s1-s2" name="FindNewCarsTest DataDriven" source="C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\FindNewCarsTest_DataDriven.robot">
+<test id="s1-s2-t1" name="Find New Toyota Car Test" line="36">
 <kw name="Find New Cars">
 <arg>chrome</arg>
 <arg>Toyota</arg>
@@ -13,46 +106,46 @@
 <arg>${url}</arg>
 <arg>${browserName}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240903 18:27:03.157" level="INFO">Opening browser 'chrome' to base url 'https://carwale.com/'.</msg>
-<status status="PASS" starttime="20240903 18:27:03.157" endtime="20240903 18:27:18.716"/>
+<msg timestamp="20240903 19:15:57.918" level="INFO">Opening browser 'chrome' to base url 'https://carwale.com/'.</msg>
+<status status="PASS" starttime="20240903 19:15:57.918" endtime="20240903 19:16:15.421"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>20 seconds</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240903 18:27:18.716" endtime="20240903 18:27:18.719"/>
+<status status="PASS" starttime="20240903 19:16:15.422" endtime="20240903 19:16:15.425"/>
 </kw>
 <kw name="Log Title" library="SeleniumLibrary">
 <doc>Logs and returns the title of the current page.</doc>
-<msg timestamp="20240903 18:27:18.732" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
-<status status="PASS" starttime="20240903 18:27:18.720" endtime="20240903 18:27:18.732"/>
+<msg timestamp="20240903 19:16:15.434" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
+<status status="PASS" starttime="20240903 19:16:15.425" endtime="20240903 19:16:15.434"/>
 </kw>
-<status status="PASS" starttime="20240903 18:27:03.157" endtime="20240903 18:27:18.733"/>
+<status status="PASS" starttime="20240903 19:15:57.918" endtime="20240903 19:16:15.434"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240903 18:27:18.733" endtime="20240903 18:27:18.799"/>
+<status status="PASS" starttime="20240903 19:16:15.434" endtime="20240903 19:16:15.485"/>
 </kw>
 <kw name="Go to new car page" library="HomePage">
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>${newcar_xpath}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20240903 18:27:18.801" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
-<status status="PASS" starttime="20240903 18:27:18.799" endtime="20240903 18:27:19.157"/>
+<msg timestamp="20240903 19:16:15.489" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
+<status status="PASS" starttime="20240903 19:16:15.487" endtime="20240903 19:16:15.837"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${findnewcar_xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240903 18:27:19.159" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
-<status status="PASS" starttime="20240903 18:27:19.158" endtime="20240903 18:27:19.362"/>
+<msg timestamp="20240903 19:16:15.838" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
+<status status="PASS" starttime="20240903 19:16:15.837" endtime="20240903 19:16:15.997"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${newcar_header_xpath}</arg>
 <arg>New Cars</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20240903 18:27:19.364" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
-<status status="PASS" starttime="20240903 18:27:19.362" endtime="20240903 18:27:19.818"/>
+<msg timestamp="20240903 19:16:15.999" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
+<status status="PASS" starttime="20240903 19:16:15.998" endtime="20240903 19:16:16.435"/>
 </kw>
-<status status="PASS" starttime="20240903 18:27:18.799" endtime="20240903 18:27:19.819"/>
+<status status="PASS" starttime="20240903 19:16:15.486" endtime="20240903 19:16:16.435"/>
 </kw>
 <if>
 <branch type="IF" condition="'${brandname}' == 'Toyota'">
@@ -60,34 +153,34 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${toyotacar_xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240903 18:27:19.821" level="INFO">Clicking element '//div[normalize-space()='Toyota']'.</msg>
-<status status="PASS" starttime="20240903 18:27:19.820" endtime="20240903 18:27:19.954"/>
+<msg timestamp="20240903 19:16:16.438" level="INFO">Clicking element '//div[normalize-space()='Toyota']'.</msg>
+<status status="PASS" starttime="20240903 19:16:16.438" endtime="20240903 19:16:16.557"/>
 </kw>
-<status status="PASS" starttime="20240903 18:27:19.819" endtime="20240903 18:27:19.955"/>
+<status status="PASS" starttime="20240903 19:16:16.437" endtime="20240903 19:16:16.557"/>
 </kw>
-<status status="PASS" starttime="20240903 18:27:19.819" endtime="20240903 18:27:19.955"/>
+<status status="PASS" starttime="20240903 19:16:16.435" endtime="20240903 19:16:16.558"/>
 </branch>
 <branch type="ELSE IF" condition="'${brandname}' == 'BMW'">
 <kw name="Go to BMW" library="NewCarPage">
-<status status="NOT RUN" starttime="20240903 18:27:19.955" endtime="20240903 18:27:19.955"/>
+<status status="NOT RUN" starttime="20240903 19:16:16.558" endtime="20240903 19:16:16.558"/>
 </kw>
-<status status="NOT RUN" starttime="20240903 18:27:19.955" endtime="20240903 18:27:19.955"/>
+<status status="NOT RUN" starttime="20240903 19:16:16.558" endtime="20240903 19:16:16.558"/>
 </branch>
 <branch type="ELSE IF" condition="'${brandname}' == 'Kia'">
 <kw name="Go to Kia" library="NewCarPage">
-<status status="NOT RUN" starttime="20240903 18:27:19.955" endtime="20240903 18:27:19.955"/>
+<status status="NOT RUN" starttime="20240903 19:16:16.559" endtime="20240903 19:16:16.559"/>
 </kw>
-<status status="NOT RUN" starttime="20240903 18:27:19.955" endtime="20240903 18:27:19.955"/>
+<status status="NOT RUN" starttime="20240903 19:16:16.558" endtime="20240903 19:16:16.559"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Invalid car selected</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240903 18:27:19.955" endtime="20240903 18:27:19.955"/>
+<status status="NOT RUN" starttime="20240903 19:16:16.559" endtime="20240903 19:16:16.560"/>
 </kw>
-<status status="NOT RUN" starttime="20240903 18:27:19.955" endtime="20240903 18:27:19.955"/>
+<status status="NOT RUN" starttime="20240903 19:16:16.559" endtime="20240903 19:16:16.560"/>
 </branch>
-<status status="PASS" starttime="20240903 18:27:19.819" endtime="20240903 18:27:19.955"/>
+<status status="PASS" starttime="20240903 19:16:16.435" endtime="20240903 19:16:16.560"/>
 </if>
 <kw name="Verify Car heading" library="CarBase">
 <arg>${carheading}</arg>
@@ -95,31 +188,29 @@
 <arg>${carheading_xpath}</arg>
 <arg>${carheading}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20240903 18:27:19.957" level="INFO">Verifying element '//*[@id='root']/div[2]/div/div[2]/div/h1' contains exact text 'Toyota Cars'.</msg>
-<msg timestamp="20240903 18:27:40.281" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240903 18:27:40.281" level="FAIL">Element with locator '//*[@id='root']/div[2]/div/div[2]/div/h1' not found.</msg>
-<status status="FAIL" starttime="20240903 18:27:19.956" endtime="20240903 18:27:40.451"/>
+<msg timestamp="20240903 19:16:16.563" level="INFO">Verifying element '//*[@id='root']/div[3]/div/div/div//h1' contains exact text 'Toyota Cars'.</msg>
+<status status="PASS" starttime="20240903 19:16:16.561" endtime="20240903 19:16:17.401"/>
 </kw>
-<status status="FAIL" starttime="20240903 18:27:19.955" endtime="20240903 18:27:40.451"/>
+<status status="PASS" starttime="20240903 19:16:16.561" endtime="20240903 19:16:17.401"/>
 </kw>
-<status status="FAIL" starttime="20240903 18:27:03.156" endtime="20240903 18:27:40.451"/>
+<status status="PASS" starttime="20240903 19:15:57.916" endtime="20240903 19:16:17.401"/>
 </kw>
 <kw name="Finish Test Case" library="commons" type="TEARDOWN">
 <kw name="Log" library="BuiltIn">
 <arg>Ending the test case</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240903 18:27:40.452" level="INFO">Ending the test case</msg>
-<status status="PASS" starttime="20240903 18:27:40.452" endtime="20240903 18:27:40.453"/>
+<msg timestamp="20240903 19:16:17.402" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240903 19:16:17.402" endtime="20240903 19:16:17.402"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240903 18:27:40.453" endtime="20240903 18:27:46.889"/>
+<status status="PASS" starttime="20240903 19:16:17.402" endtime="20240903 19:16:20.596"/>
 </kw>
-<status status="PASS" starttime="20240903 18:27:40.452" endtime="20240903 18:27:46.889"/>
+<status status="PASS" starttime="20240903 19:16:17.402" endtime="20240903 19:16:20.597"/>
 </kw>
-<status status="FAIL" starttime="20240903 18:27:03.155" endtime="20240903 18:27:46.889">Element with locator '//*[@id='root']/div[2]/div/div[2]/div/h1' not found.</status>
+<status status="PASS" starttime="20240903 19:15:57.915" endtime="20240903 19:16:20.599"/>
 </test>
-<test id="s1-t2" name="Find New Kia Car Test" line="36">
+<test id="s1-s2-t2" name="Find New Kia Car Test" line="36">
 <kw name="Find New Cars">
 <arg>firefox</arg>
 <arg>Kia</arg>
@@ -131,81 +222,81 @@
 <arg>${url}</arg>
 <arg>${browserName}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240903 18:27:46.895" level="INFO">Opening browser 'firefox' to base url 'https://carwale.com/'.</msg>
-<status status="PASS" starttime="20240903 18:27:46.895" endtime="20240903 18:28:11.575"/>
+<msg timestamp="20240903 19:16:20.604" level="INFO">Opening browser 'firefox' to base url 'https://carwale.com/'.</msg>
+<status status="PASS" starttime="20240903 19:16:20.603" endtime="20240903 19:16:46.251"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>20 seconds</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240903 18:28:11.575" endtime="20240903 18:28:11.596"/>
+<status status="PASS" starttime="20240903 19:16:46.251" endtime="20240903 19:16:46.254"/>
 </kw>
 <kw name="Log Title" library="SeleniumLibrary">
 <doc>Logs and returns the title of the current page.</doc>
-<msg timestamp="20240903 18:28:11.613" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
-<status status="PASS" starttime="20240903 18:28:11.597" endtime="20240903 18:28:11.613"/>
+<msg timestamp="20240903 19:16:46.267" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
+<status status="PASS" starttime="20240903 19:16:46.255" endtime="20240903 19:16:46.267"/>
 </kw>
-<status status="PASS" starttime="20240903 18:27:46.895" endtime="20240903 18:28:11.614"/>
+<status status="PASS" starttime="20240903 19:16:20.603" endtime="20240903 19:16:46.267"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240903 18:28:11.614" endtime="20240903 18:28:11.624"/>
+<status status="PASS" starttime="20240903 19:16:46.267" endtime="20240903 19:16:46.274"/>
 </kw>
 <kw name="Go to new car page" library="HomePage">
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>${newcar_xpath}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20240903 18:28:11.624" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
-<status status="PASS" starttime="20240903 18:28:11.624" endtime="20240903 18:28:11.958"/>
+<msg timestamp="20240903 19:16:46.275" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
+<status status="PASS" starttime="20240903 19:16:46.274" endtime="20240903 19:16:46.778"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${findnewcar_xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240903 18:28:11.959" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
-<status status="PASS" starttime="20240903 18:28:11.958" endtime="20240903 18:28:12.606"/>
+<msg timestamp="20240903 19:16:46.779" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
+<status status="PASS" starttime="20240903 19:16:46.778" endtime="20240903 19:16:47.331"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${newcar_header_xpath}</arg>
 <arg>New Cars</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20240903 18:28:12.608" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
-<status status="PASS" starttime="20240903 18:28:12.606" endtime="20240903 18:28:13.010"/>
+<msg timestamp="20240903 19:16:47.332" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
+<status status="PASS" starttime="20240903 19:16:47.331" endtime="20240903 19:16:47.827"/>
 </kw>
-<status status="PASS" starttime="20240903 18:28:11.624" endtime="20240903 18:28:13.010"/>
+<status status="PASS" starttime="20240903 19:16:46.274" endtime="20240903 19:16:47.827"/>
 </kw>
 <if>
 <branch type="IF" condition="'${brandname}' == 'Toyota'">
 <kw name="Go to Toyota" library="NewCarPage">
-<status status="NOT RUN" starttime="20240903 18:28:13.011" endtime="20240903 18:28:13.011"/>
+<status status="NOT RUN" starttime="20240903 19:16:47.828" endtime="20240903 19:16:47.828"/>
 </kw>
-<status status="NOT RUN" starttime="20240903 18:28:13.010" endtime="20240903 18:28:13.011"/>
+<status status="NOT RUN" starttime="20240903 19:16:47.828" endtime="20240903 19:16:47.828"/>
 </branch>
 <branch type="ELSE IF" condition="'${brandname}' == 'BMW'">
 <kw name="Go to BMW" library="NewCarPage">
-<status status="NOT RUN" starttime="20240903 18:28:13.011" endtime="20240903 18:28:13.011"/>
+<status status="NOT RUN" starttime="20240903 19:16:47.829" endtime="20240903 19:16:47.829"/>
 </kw>
-<status status="NOT RUN" starttime="20240903 18:28:13.011" endtime="20240903 18:28:13.011"/>
+<status status="NOT RUN" starttime="20240903 19:16:47.828" endtime="20240903 19:16:47.829"/>
 </branch>
 <branch type="ELSE IF" condition="'${brandname}' == 'Kia'">
 <kw name="Go to Kia" library="NewCarPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Kiacar_xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240903 18:28:13.012" level="INFO">Clicking element '//div[normalize-space()='Kia']'.</msg>
-<status status="PASS" starttime="20240903 18:28:13.012" endtime="20240903 18:28:13.337"/>
+<msg timestamp="20240903 19:16:47.831" level="INFO">Clicking element '//div[normalize-space()='Kia']'.</msg>
+<status status="PASS" starttime="20240903 19:16:47.830" endtime="20240903 19:16:48.175"/>
 </kw>
-<status status="PASS" starttime="20240903 18:28:13.011" endtime="20240903 18:28:13.337"/>
+<status status="PASS" starttime="20240903 19:16:47.829" endtime="20240903 19:16:48.175"/>
 </kw>
-<status status="PASS" starttime="20240903 18:28:13.011" endtime="20240903 18:28:13.337"/>
+<status status="PASS" starttime="20240903 19:16:47.829" endtime="20240903 19:16:48.175"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Invalid car selected</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240903 18:28:13.337" endtime="20240903 18:28:13.337"/>
+<status status="NOT RUN" starttime="20240903 19:16:48.176" endtime="20240903 19:16:48.176"/>
 </kw>
-<status status="NOT RUN" starttime="20240903 18:28:13.337" endtime="20240903 18:28:13.337"/>
+<status status="NOT RUN" starttime="20240903 19:16:48.175" endtime="20240903 19:16:48.176"/>
 </branch>
-<status status="PASS" starttime="20240903 18:28:13.010" endtime="20240903 18:28:13.337"/>
+<status status="PASS" starttime="20240903 19:16:47.828" endtime="20240903 19:16:48.176"/>
 </if>
 <kw name="Verify Car heading" library="CarBase">
 <arg>${carheading}</arg>
@@ -213,31 +304,29 @@
 <arg>${carheading_xpath}</arg>
 <arg>${carheading}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20240903 18:28:13.338" level="INFO">Verifying element '//*[@id='root']/div[2]/div/div[2]/div/h1' contains exact text 'Kia Cars'.</msg>
-<msg timestamp="20240903 18:28:33.465" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240903 18:28:33.466" level="FAIL">Element with locator '//*[@id='root']/div[2]/div/div[2]/div/h1' not found.</msg>
-<status status="FAIL" starttime="20240903 18:28:13.337" endtime="20240903 18:28:33.467"/>
+<msg timestamp="20240903 19:16:48.177" level="INFO">Verifying element '//*[@id='root']/div[3]/div/div/div//h1' contains exact text 'Kia Cars'.</msg>
+<status status="PASS" starttime="20240903 19:16:48.176" endtime="20240903 19:16:48.627"/>
 </kw>
-<status status="FAIL" starttime="20240903 18:28:13.337" endtime="20240903 18:28:33.468"/>
+<status status="PASS" starttime="20240903 19:16:48.176" endtime="20240903 19:16:48.627"/>
 </kw>
-<status status="FAIL" starttime="20240903 18:27:46.893" endtime="20240903 18:28:33.468"/>
+<status status="PASS" starttime="20240903 19:16:20.603" endtime="20240903 19:16:48.627"/>
 </kw>
 <kw name="Finish Test Case" library="commons" type="TEARDOWN">
 <kw name="Log" library="BuiltIn">
 <arg>Ending the test case</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240903 18:28:33.469" level="INFO">Ending the test case</msg>
-<status status="PASS" starttime="20240903 18:28:33.469" endtime="20240903 18:28:33.469"/>
+<msg timestamp="20240903 19:16:48.628" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240903 19:16:48.628" endtime="20240903 19:16:48.628"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240903 18:28:33.469" endtime="20240903 18:28:39.122"/>
+<status status="PASS" starttime="20240903 19:16:48.628" endtime="20240903 19:16:54.662"/>
 </kw>
-<status status="PASS" starttime="20240903 18:28:33.469" endtime="20240903 18:28:39.122"/>
+<status status="PASS" starttime="20240903 19:16:48.628" endtime="20240903 19:16:54.662"/>
 </kw>
-<status status="FAIL" starttime="20240903 18:27:46.892" endtime="20240903 18:28:39.126">Element with locator '//*[@id='root']/div[2]/div/div[2]/div/h1' not found.</status>
+<status status="PASS" starttime="20240903 19:16:20.601" endtime="20240903 19:16:54.664"/>
 </test>
-<test id="s1-t3" name="Find New BMW Car Test" line="36">
+<test id="s1-s2-t3" name="Find New BMW Car Test" line="36">
 <kw name="Find New Cars">
 <arg>chrome</arg>
 <arg>BMW</arg>
@@ -249,81 +338,81 @@
 <arg>${url}</arg>
 <arg>${browserName}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240903 18:28:39.131" level="INFO">Opening browser 'chrome' to base url 'https://carwale.com/'.</msg>
-<status status="PASS" starttime="20240903 18:28:39.130" endtime="20240903 18:28:53.258"/>
+<msg timestamp="20240903 19:16:54.671" level="INFO">Opening browser 'chrome' to base url 'https://carwale.com/'.</msg>
+<status status="PASS" starttime="20240903 19:16:54.669" endtime="20240903 19:17:06.779"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>20 seconds</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240903 18:28:53.258" endtime="20240903 18:28:53.260"/>
+<status status="PASS" starttime="20240903 19:17:06.779" endtime="20240903 19:17:06.781"/>
 </kw>
 <kw name="Log Title" library="SeleniumLibrary">
 <doc>Logs and returns the title of the current page.</doc>
-<msg timestamp="20240903 18:28:53.272" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
-<status status="PASS" starttime="20240903 18:28:53.260" endtime="20240903 18:28:53.272"/>
+<msg timestamp="20240903 19:17:06.790" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
+<status status="PASS" starttime="20240903 19:17:06.781" endtime="20240903 19:17:06.790"/>
 </kw>
-<status status="PASS" starttime="20240903 18:28:39.130" endtime="20240903 18:28:53.272"/>
+<status status="PASS" starttime="20240903 19:16:54.669" endtime="20240903 19:17:06.790"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240903 18:28:53.272" endtime="20240903 18:28:53.328"/>
+<status status="PASS" starttime="20240903 19:17:06.790" endtime="20240903 19:17:06.833"/>
 </kw>
 <kw name="Go to new car page" library="HomePage">
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>${newcar_xpath}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20240903 18:28:53.330" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
-<status status="PASS" starttime="20240903 18:28:53.329" endtime="20240903 18:28:53.668"/>
+<msg timestamp="20240903 19:17:06.835" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
+<status status="PASS" starttime="20240903 19:17:06.834" endtime="20240903 19:17:07.162"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${findnewcar_xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240903 18:28:53.669" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
-<status status="PASS" starttime="20240903 18:28:53.668" endtime="20240903 18:28:53.837"/>
+<msg timestamp="20240903 19:17:07.167" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
+<status status="PASS" starttime="20240903 19:17:07.164" endtime="20240903 19:17:07.434"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${newcar_header_xpath}</arg>
 <arg>New Cars</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20240903 18:28:53.838" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
-<status status="PASS" starttime="20240903 18:28:53.837" endtime="20240903 18:28:54.322"/>
+<msg timestamp="20240903 19:17:07.436" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
+<status status="PASS" starttime="20240903 19:17:07.435" endtime="20240903 19:17:07.901"/>
 </kw>
-<status status="PASS" starttime="20240903 18:28:53.328" endtime="20240903 18:28:54.322"/>
+<status status="PASS" starttime="20240903 19:17:06.833" endtime="20240903 19:17:07.901"/>
 </kw>
 <if>
 <branch type="IF" condition="'${brandname}' == 'Toyota'">
 <kw name="Go to Toyota" library="NewCarPage">
-<status status="NOT RUN" starttime="20240903 18:28:54.323" endtime="20240903 18:28:54.323"/>
+<status status="NOT RUN" starttime="20240903 19:17:07.902" endtime="20240903 19:17:07.902"/>
 </kw>
-<status status="NOT RUN" starttime="20240903 18:28:54.322" endtime="20240903 18:28:54.323"/>
+<status status="NOT RUN" starttime="20240903 19:17:07.901" endtime="20240903 19:17:07.902"/>
 </branch>
 <branch type="ELSE IF" condition="'${brandname}' == 'BMW'">
 <kw name="Go to BMW" library="NewCarPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${BMWcar_xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240903 18:28:54.326" level="INFO">Clicking element '//div[normalize-space()='BMW']'.</msg>
-<status status="PASS" starttime="20240903 18:28:54.325" endtime="20240903 18:28:54.446"/>
+<msg timestamp="20240903 19:17:07.902" level="INFO">Clicking element '//div[normalize-space()='BMW']'.</msg>
+<status status="PASS" starttime="20240903 19:17:07.902" endtime="20240903 19:17:08.015"/>
 </kw>
-<status status="PASS" starttime="20240903 18:28:54.324" endtime="20240903 18:28:54.446"/>
+<status status="PASS" starttime="20240903 19:17:07.902" endtime="20240903 19:17:08.015"/>
 </kw>
-<status status="PASS" starttime="20240903 18:28:54.323" endtime="20240903 18:28:54.446"/>
+<status status="PASS" starttime="20240903 19:17:07.902" endtime="20240903 19:17:08.016"/>
 </branch>
 <branch type="ELSE IF" condition="'${brandname}' == 'Kia'">
 <kw name="Go to Kia" library="NewCarPage">
-<status status="NOT RUN" starttime="20240903 18:28:54.446" endtime="20240903 18:28:54.446"/>
+<status status="NOT RUN" starttime="20240903 19:17:08.016" endtime="20240903 19:17:08.016"/>
 </kw>
-<status status="NOT RUN" starttime="20240903 18:28:54.446" endtime="20240903 18:28:54.446"/>
+<status status="NOT RUN" starttime="20240903 19:17:08.016" endtime="20240903 19:17:08.016"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Invalid car selected</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240903 18:28:54.446" endtime="20240903 18:28:54.446"/>
+<status status="NOT RUN" starttime="20240903 19:17:08.016" endtime="20240903 19:17:08.016"/>
 </kw>
-<status status="NOT RUN" starttime="20240903 18:28:54.446" endtime="20240903 18:28:54.446"/>
+<status status="NOT RUN" starttime="20240903 19:17:08.016" endtime="20240903 19:17:08.016"/>
 </branch>
-<status status="PASS" starttime="20240903 18:28:54.322" endtime="20240903 18:28:54.446"/>
+<status status="PASS" starttime="20240903 19:17:07.901" endtime="20240903 19:17:08.016"/>
 </if>
 <kw name="Verify Car heading" library="CarBase">
 <arg>${carheading}</arg>
@@ -331,40 +420,1175 @@
 <arg>${carheading_xpath}</arg>
 <arg>${carheading}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20240903 18:28:54.449" level="INFO">Verifying element '//*[@id='root']/div[2]/div/div[2]/div/h1' contains exact text 'BMW Cars'.</msg>
-<msg timestamp="20240903 18:29:14.664" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240903 18:29:14.664" level="FAIL">Element with locator '//*[@id='root']/div[2]/div/div[2]/div/h1' not found.</msg>
-<status status="FAIL" starttime="20240903 18:28:54.447" endtime="20240903 18:29:14.668"/>
+<msg timestamp="20240903 19:17:08.017" level="INFO">Verifying element '//*[@id='root']/div[3]/div/div/div//h1' contains exact text 'BMW Cars'.</msg>
+<status status="PASS" starttime="20240903 19:17:08.017" endtime="20240903 19:17:08.705"/>
 </kw>
-<status status="FAIL" starttime="20240903 18:28:54.446" endtime="20240903 18:29:14.668"/>
+<status status="PASS" starttime="20240903 19:17:08.016" endtime="20240903 19:17:08.705"/>
 </kw>
-<status status="FAIL" starttime="20240903 18:28:39.130" endtime="20240903 18:29:14.668"/>
+<status status="PASS" starttime="20240903 19:16:54.668" endtime="20240903 19:17:08.705"/>
 </kw>
 <kw name="Finish Test Case" library="commons" type="TEARDOWN">
 <kw name="Log" library="BuiltIn">
 <arg>Ending the test case</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240903 18:29:14.670" level="INFO">Ending the test case</msg>
-<status status="PASS" starttime="20240903 18:29:14.670" endtime="20240903 18:29:14.670"/>
+<msg timestamp="20240903 19:17:08.706" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240903 19:17:08.706" endtime="20240903 19:17:08.707"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240903 18:29:14.671" endtime="20240903 18:29:20.136"/>
+<status status="PASS" starttime="20240903 19:17:08.707" endtime="20240903 19:17:11.790"/>
 </kw>
-<status status="PASS" starttime="20240903 18:29:14.669" endtime="20240903 18:29:20.136"/>
+<status status="PASS" starttime="20240903 19:17:08.706" endtime="20240903 19:17:11.790"/>
 </kw>
-<status status="FAIL" starttime="20240903 18:28:39.127" endtime="20240903 18:29:20.137">Element with locator '//*[@id='root']/div[2]/div/div[2]/div/h1' not found.</status>
+<status status="PASS" starttime="20240903 19:16:54.666" endtime="20240903 19:17:11.791"/>
 </test>
-<status status="FAIL" starttime="20240903 18:27:01.020" endtime="20240903 18:29:20.139"/>
+<status status="PASS" starttime="20240903 19:15:55.755" endtime="20240903 19:17:11.795"/>
+</suite>
+<suite id="s1-s3" name="getCarNameTest" source="C:\Users\yashshvi.a.mittal\RobotFramework\robot-python\testScripts\uiTestCases\getCarNameTest.robot">
+<test id="s1-s3-t1" name="Get Cars Name Test Toyota" line="37">
+<kw name="Find New Cars">
+<arg>chrome</arg>
+<arg>Toyota</arg>
+<arg>Toyota Cars</arg>
+<kw name="Launching Browser" library="commons">
+<arg>${testsiteurl}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240903 19:17:11.855" level="INFO">Opening browser 'chrome' to base url 'https://carwale.com/'.</msg>
+<status status="PASS" starttime="20240903 19:17:11.854" endtime="20240903 19:17:25.099"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240903 19:17:25.100" endtime="20240903 19:17:25.103"/>
+</kw>
+<kw name="Log Title" library="SeleniumLibrary">
+<doc>Logs and returns the title of the current page.</doc>
+<msg timestamp="20240903 19:17:25.118" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
+<status status="PASS" starttime="20240903 19:17:25.103" endtime="20240903 19:17:25.119"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:11.854" endtime="20240903 19:17:25.119"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240903 19:17:25.120" endtime="20240903 19:17:25.172"/>
+</kw>
+<kw name="Go to new car page" library="HomePage">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${newcar_xpath}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240903 19:17:25.173" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
+<status status="PASS" starttime="20240903 19:17:25.172" endtime="20240903 19:17:25.506"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${findnewcar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:25.508" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
+<status status="PASS" starttime="20240903 19:17:25.506" endtime="20240903 19:17:25.686"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${newcar_header_xpath}</arg>
+<arg>New Cars</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240903 19:17:25.687" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
+<status status="PASS" starttime="20240903 19:17:25.687" endtime="20240903 19:17:26.170"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:25.172" endtime="20240903 19:17:26.170"/>
+</kw>
+<if>
+<branch type="IF" condition="'${brandname}' == 'Toyota'">
+<kw name="Go to Toyota" library="NewCarPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${toyotacar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:26.172" level="INFO">Clicking element '//div[normalize-space()='Toyota']'.</msg>
+<status status="PASS" starttime="20240903 19:17:26.171" endtime="20240903 19:17:26.287"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:26.171" endtime="20240903 19:17:26.287"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:26.170" endtime="20240903 19:17:26.287"/>
+</branch>
+<branch type="ELSE IF" condition="'${brandname}' == 'BMW'">
+<kw name="Go to BMW" library="NewCarPage">
+<status status="NOT RUN" starttime="20240903 19:17:26.287" endtime="20240903 19:17:26.287"/>
+</kw>
+<status status="NOT RUN" starttime="20240903 19:17:26.287" endtime="20240903 19:17:26.287"/>
+</branch>
+<branch type="ELSE IF" condition="'${brandname}' == 'Kia'">
+<kw name="Go to Kia" library="NewCarPage">
+<status status="NOT RUN" starttime="20240903 19:17:26.288" endtime="20240903 19:17:26.288"/>
+</kw>
+<status status="NOT RUN" starttime="20240903 19:17:26.287" endtime="20240903 19:17:26.288"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Invalid car selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240903 19:17:26.288" endtime="20240903 19:17:26.288"/>
+</kw>
+<status status="NOT RUN" starttime="20240903 19:17:26.288" endtime="20240903 19:17:26.288"/>
+</branch>
+<status status="PASS" starttime="20240903 19:17:26.170" endtime="20240903 19:17:26.288"/>
+</if>
+<kw name="Verify Car heading" library="CarBase">
+<arg>${carheading}</arg>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${carheading_xpath}</arg>
+<arg>${carheading}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240903 19:17:26.290" level="INFO">Verifying element '//*[@id='root']/div[3]/div/div/div//h1' contains exact text 'Toyota Cars'.</msg>
+<status status="PASS" starttime="20240903 19:17:26.288" endtime="20240903 19:17:27.149"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:26.288" endtime="20240903 19:17:27.149"/>
+</kw>
+<kw name="get car name" library="CarBase">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{carnames}</var>
+<arg>${carnames_xpath}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.165" level="INFO">@{carnames} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.97")&gt; | &lt;selenium.webdr...</msg>
+<status status="PASS" starttime="20240903 19:17:27.149" endtime="20240903 19:17:27.165"/>
+</kw>
+<for flavor="IN">
+<var>${carname}</var>
+<value>@{carnames}</value>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.97")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.180" level="INFO">${text} = Toyota Urban Cruiser Taisor</msg>
+<status status="PASS" starttime="20240903 19:17:27.165" endtime="20240903 19:17:27.180"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.180" endtime="20240903 19:17:27.181"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.165" endtime="20240903 19:17:27.181"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.98")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.194" level="INFO">${text} = Toyota Urban Cruiser Hyryder</msg>
+<status status="PASS" starttime="20240903 19:17:27.181" endtime="20240903 19:17:27.194"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.194" endtime="20240903 19:17:27.194"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.181" endtime="20240903 19:17:27.194"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.99")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.204" level="INFO">${text} = Toyota Innova Hycross</msg>
+<status status="PASS" starttime="20240903 19:17:27.195" endtime="20240903 19:17:27.204"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.204" endtime="20240903 19:17:27.204"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.195" endtime="20240903 19:17:27.204"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.100")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.216" level="INFO">${text} = Toyota Innova Crysta</msg>
+<status status="PASS" starttime="20240903 19:17:27.204" endtime="20240903 19:17:27.217"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.217" endtime="20240903 19:17:27.217"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.204" endtime="20240903 19:17:27.217"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.101")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.234" level="INFO">${text} = Toyota Glanza</msg>
+<status status="PASS" starttime="20240903 19:17:27.217" endtime="20240903 19:17:27.234"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.235" endtime="20240903 19:17:27.235"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.217" endtime="20240903 19:17:27.235"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.102")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.247" level="INFO">${text} = Toyota Rumion</msg>
+<status status="PASS" starttime="20240903 19:17:27.235" endtime="20240903 19:17:27.247"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.248" endtime="20240903 19:17:27.248"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.235" endtime="20240903 19:17:27.248"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.103")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.261" level="INFO">${text} = Toyota Fortuner</msg>
+<status status="PASS" starttime="20240903 19:17:27.248" endtime="20240903 19:17:27.261"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.261" endtime="20240903 19:17:27.262"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.248" endtime="20240903 19:17:27.262"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.104")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.286" level="INFO">${text} = Toyota Land Cruiser</msg>
+<status status="PASS" starttime="20240903 19:17:27.262" endtime="20240903 19:17:27.286"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.286" endtime="20240903 19:17:27.287"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.262" endtime="20240903 19:17:27.287"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.105")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.300" level="INFO">${text} = Toyota Vellfire</msg>
+<status status="PASS" starttime="20240903 19:17:27.287" endtime="20240903 19:17:27.300"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.300" endtime="20240903 19:17:27.301"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.287" endtime="20240903 19:17:27.301"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.106")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.319" level="INFO">${text} = Toyota Hilux</msg>
+<status status="PASS" starttime="20240903 19:17:27.301" endtime="20240903 19:17:27.319"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.319" endtime="20240903 19:17:27.320"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.301" endtime="20240903 19:17:27.320"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.107")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.338" level="INFO">${text} = Toyota Fortuner Legender</msg>
+<status status="PASS" starttime="20240903 19:17:27.320" endtime="20240903 19:17:27.339"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.339" endtime="20240903 19:17:27.339"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.320" endtime="20240903 19:17:27.339"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.108")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.362" level="INFO">${text} = Toyota Camry</msg>
+<status status="PASS" starttime="20240903 19:17:27.340" endtime="20240903 19:17:27.362"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.362" endtime="20240903 19:17:27.363"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.340" endtime="20240903 19:17:27.363"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8989aeb152da07c888e45a5895c67d53", element="f.B7EF15DDCC3AEC36029319DF217A1BB5.d.C98D07954D7166DDD84A169B0334B6B2.e.109")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:27.387" level="INFO">${text} = Toyota BZ4X</msg>
+<status status="PASS" starttime="20240903 19:17:27.364" endtime="20240903 19:17:27.387"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:27.388" endtime="20240903 19:17:27.388"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.363" endtime="20240903 19:17:27.388"/>
+</iter>
+<status status="PASS" starttime="20240903 19:17:27.165" endtime="20240903 19:17:27.389"/>
+</for>
+<status status="PASS" starttime="20240903 19:17:27.149" endtime="20240903 19:17:27.389"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:11.854" endtime="20240903 19:17:27.389"/>
+</kw>
+<kw name="Finish Test Case" library="commons" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Ending the test case</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240903 19:17:27.391" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240903 19:17:27.390" endtime="20240903 19:17:27.391"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240903 19:17:27.391" endtime="20240903 19:17:30.593"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:27.390" endtime="20240903 19:17:30.593"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:11.852" endtime="20240903 19:17:30.594"/>
+</test>
+<test id="s1-s3-t2" name="Get Cars Name Test Kia" line="37">
+<kw name="Find New Cars">
+<arg>firefox</arg>
+<arg>Kia</arg>
+<arg>Kia Cars</arg>
+<kw name="Launching Browser" library="commons">
+<arg>${testsiteurl}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240903 19:17:30.600" level="INFO">Opening browser 'firefox' to base url 'https://carwale.com/'.</msg>
+<status status="PASS" starttime="20240903 19:17:30.600" endtime="20240903 19:17:56.100"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240903 19:17:56.100" endtime="20240903 19:17:56.106"/>
+</kw>
+<kw name="Log Title" library="SeleniumLibrary">
+<doc>Logs and returns the title of the current page.</doc>
+<msg timestamp="20240903 19:17:56.118" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
+<status status="PASS" starttime="20240903 19:17:56.106" endtime="20240903 19:17:56.119"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:30.599" endtime="20240903 19:17:56.119"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240903 19:17:56.120" endtime="20240903 19:17:56.123"/>
+</kw>
+<kw name="Go to new car page" library="HomePage">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${newcar_xpath}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240903 19:17:56.126" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
+<status status="PASS" starttime="20240903 19:17:56.125" endtime="20240903 19:17:56.452"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${findnewcar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:56.453" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
+<status status="PASS" starttime="20240903 19:17:56.452" endtime="20240903 19:17:57.136"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${newcar_header_xpath}</arg>
+<arg>New Cars</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240903 19:17:57.138" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
+<status status="PASS" starttime="20240903 19:17:57.137" endtime="20240903 19:17:57.945"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:56.124" endtime="20240903 19:17:57.946"/>
+</kw>
+<if>
+<branch type="IF" condition="'${brandname}' == 'Toyota'">
+<kw name="Go to Toyota" library="NewCarPage">
+<status status="NOT RUN" starttime="20240903 19:17:57.946" endtime="20240903 19:17:57.946"/>
+</kw>
+<status status="NOT RUN" starttime="20240903 19:17:57.946" endtime="20240903 19:17:57.946"/>
+</branch>
+<branch type="ELSE IF" condition="'${brandname}' == 'BMW'">
+<kw name="Go to BMW" library="NewCarPage">
+<status status="NOT RUN" starttime="20240903 19:17:57.946" endtime="20240903 19:17:57.946"/>
+</kw>
+<status status="NOT RUN" starttime="20240903 19:17:57.946" endtime="20240903 19:17:57.946"/>
+</branch>
+<branch type="ELSE IF" condition="'${brandname}' == 'Kia'">
+<kw name="Go to Kia" library="NewCarPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Kiacar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:57.947" level="INFO">Clicking element '//div[normalize-space()='Kia']'.</msg>
+<status status="PASS" starttime="20240903 19:17:57.946" endtime="20240903 19:17:58.259"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:57.946" endtime="20240903 19:17:58.259"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:57.946" endtime="20240903 19:17:58.259"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Invalid car selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240903 19:17:58.259" endtime="20240903 19:17:58.259"/>
+</kw>
+<status status="NOT RUN" starttime="20240903 19:17:58.259" endtime="20240903 19:17:58.259"/>
+</branch>
+<status status="PASS" starttime="20240903 19:17:57.946" endtime="20240903 19:17:58.259"/>
+</if>
+<kw name="Verify Car heading" library="CarBase">
+<arg>${carheading}</arg>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${carheading_xpath}</arg>
+<arg>${carheading}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240903 19:17:58.260" level="INFO">Verifying element '//*[@id='root']/div[3]/div/div/div//h1' contains exact text 'Kia Cars'.</msg>
+<status status="PASS" starttime="20240903 19:17:58.260" endtime="20240903 19:17:58.819"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:58.259" endtime="20240903 19:17:58.819"/>
+</kw>
+<kw name="get car name" library="CarBase">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{carnames}</var>
+<arg>${carnames_xpath}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20240903 19:17:58.846" level="INFO">@{carnames} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="fb78a9dc-2a8a-4158-b93c-20796c94de42")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement ...</msg>
+<status status="PASS" starttime="20240903 19:17:58.820" endtime="20240903 19:17:58.846"/>
+</kw>
+<for flavor="IN">
+<var>${carname}</var>
+<value>@{carnames}</value>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="fb78a9dc-2a8a-4158-b93c-20796c94de42")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:58.933" level="INFO">${text} = Kia New Carnival</msg>
+<status status="PASS" starttime="20240903 19:17:58.846" endtime="20240903 19:17:58.933"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:58.934" endtime="20240903 19:17:58.935"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:58.846" endtime="20240903 19:17:58.935"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="d5abd42f-b295-4fb8-9a25-971a7cb689dc")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:58.959" level="INFO">${text} = Kia New EV9</msg>
+<status status="PASS" starttime="20240903 19:17:58.936" endtime="20240903 19:17:58.959"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:58.959" endtime="20240903 19:17:58.959"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:58.935" endtime="20240903 19:17:58.959"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="f3b23484-72c3-412e-bc83-8189253f89b9")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:58.981" level="INFO">${text} = Kia Seltos</msg>
+<status status="PASS" starttime="20240903 19:17:58.961" endtime="20240903 19:17:58.981"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:58.981" endtime="20240903 19:17:58.983"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:58.961" endtime="20240903 19:17:58.983"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="340e7864-cbd1-4ee8-89d8-3ff195975003")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:59.002" level="INFO">${text} = Kia Carens</msg>
+<status status="PASS" starttime="20240903 19:17:58.983" endtime="20240903 19:17:59.002"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:59.002" endtime="20240903 19:17:59.003"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:58.983" endtime="20240903 19:17:59.003"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="ae4a73d3-fe67-4b11-9942-38e02c785e84")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:59.039" level="INFO">${text} = Kia Sonet</msg>
+<status status="PASS" starttime="20240903 19:17:59.003" endtime="20240903 19:17:59.039"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:59.039" endtime="20240903 19:17:59.041"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:59.003" endtime="20240903 19:17:59.041"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="a3b5c20f-8819-4914-aa8e-0a4bc715bd8c")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:59.059" level="INFO">${text} = Kia EV6</msg>
+<status status="PASS" starttime="20240903 19:17:59.041" endtime="20240903 19:17:59.059"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:59.059" endtime="20240903 19:17:59.059"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:59.041" endtime="20240903 19:17:59.059"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="4d18cbed-7bfb-4996-864f-ddad07425ded")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:59.074" level="INFO">${text} = Kia Clavis</msg>
+<status status="PASS" starttime="20240903 19:17:59.060" endtime="20240903 19:17:59.074"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:59.074" endtime="20240903 19:17:59.074"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:59.059" endtime="20240903 19:17:59.074"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="7f324cf4-30e8-45f6-91fc-814692ca6804")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:59.093" level="INFO">${text} = Kia Carens EV</msg>
+<status status="PASS" starttime="20240903 19:17:59.074" endtime="20240903 19:17:59.093"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:59.093" endtime="20240903 19:17:59.094"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:59.074" endtime="20240903 19:17:59.094"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="08d45bca-fca3-45ec-8404-a1001ad07ae0")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:59.115" level="INFO">${text} = Kia EV3</msg>
+<status status="PASS" starttime="20240903 19:17:59.094" endtime="20240903 19:17:59.115"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:59.115" endtime="20240903 19:17:59.117"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:59.094" endtime="20240903 19:17:59.117"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="13e3fbc5-628d-44d6-9e3e-ed3728129df6", element="ae866822-9916-4bbc-b93f-d48390548760")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:17:59.137" level="INFO">${text} = Kia EV5</msg>
+<status status="PASS" starttime="20240903 19:17:59.117" endtime="20240903 19:17:59.137"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:17:59.137" endtime="20240903 19:17:59.138"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:59.117" endtime="20240903 19:17:59.138"/>
+</iter>
+<status status="PASS" starttime="20240903 19:17:58.846" endtime="20240903 19:17:59.138"/>
+</for>
+<status status="PASS" starttime="20240903 19:17:58.819" endtime="20240903 19:17:59.138"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:30.599" endtime="20240903 19:17:59.138"/>
+</kw>
+<kw name="Finish Test Case" library="commons" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Ending the test case</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240903 19:17:59.139" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240903 19:17:59.139" endtime="20240903 19:17:59.140"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240903 19:17:59.141" endtime="20240903 19:18:03.621"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:59.139" endtime="20240903 19:18:03.621"/>
+</kw>
+<status status="PASS" starttime="20240903 19:17:30.597" endtime="20240903 19:18:03.622"/>
+</test>
+<test id="s1-s3-t3" name="Get Cars Name Test BMW" line="37">
+<kw name="Find New Cars">
+<arg>chrome</arg>
+<arg>BMW</arg>
+<arg>BMW Cars</arg>
+<kw name="Launching Browser" library="commons">
+<arg>${testsiteurl}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240903 19:18:03.629" level="INFO">Opening browser 'chrome' to base url 'https://carwale.com/'.</msg>
+<status status="PASS" starttime="20240903 19:18:03.628" endtime="20240903 19:18:15.962"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240903 19:18:15.962" endtime="20240903 19:18:15.966"/>
+</kw>
+<kw name="Log Title" library="SeleniumLibrary">
+<doc>Logs and returns the title of the current page.</doc>
+<msg timestamp="20240903 19:18:15.981" level="INFO">New Cars, Used Cars, Buy a Car, Sell Your Car - CarWale</msg>
+<status status="PASS" starttime="20240903 19:18:15.966" endtime="20240903 19:18:15.982"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:03.628" endtime="20240903 19:18:15.982"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240903 19:18:15.982" endtime="20240903 19:18:16.035"/>
+</kw>
+<kw name="Go to new car page" library="HomePage">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${newcar_xpath}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240903 19:18:16.036" level="INFO">Simulating Mouse Over on element '//div[normalize-space()='NEW CARS']'.</msg>
+<status status="PASS" starttime="20240903 19:18:16.036" endtime="20240903 19:18:16.368"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${findnewcar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:16.369" level="INFO">Clicking element '//div[contains(text(),'Find New Cars')]'.</msg>
+<status status="PASS" starttime="20240903 19:18:16.368" endtime="20240903 19:18:16.542"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${newcar_header_xpath}</arg>
+<arg>New Cars</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240903 19:18:16.544" level="INFO">Verifying element '//h1[normalize-space()='New Cars']' contains exact text 'New Cars'.</msg>
+<status status="PASS" starttime="20240903 19:18:16.542" endtime="20240903 19:18:16.999"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:16.035" endtime="20240903 19:18:16.999"/>
+</kw>
+<if>
+<branch type="IF" condition="'${brandname}' == 'Toyota'">
+<kw name="Go to Toyota" library="NewCarPage">
+<status status="NOT RUN" starttime="20240903 19:18:17.000" endtime="20240903 19:18:17.000"/>
+</kw>
+<status status="NOT RUN" starttime="20240903 19:18:16.999" endtime="20240903 19:18:17.000"/>
+</branch>
+<branch type="ELSE IF" condition="'${brandname}' == 'BMW'">
+<kw name="Go to BMW" library="NewCarPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BMWcar_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.001" level="INFO">Clicking element '//div[normalize-space()='BMW']'.</msg>
+<status status="PASS" starttime="20240903 19:18:17.000" endtime="20240903 19:18:17.127"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.000" endtime="20240903 19:18:17.127"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.000" endtime="20240903 19:18:17.127"/>
+</branch>
+<branch type="ELSE IF" condition="'${brandname}' == 'Kia'">
+<kw name="Go to Kia" library="NewCarPage">
+<status status="NOT RUN" starttime="20240903 19:18:17.127" endtime="20240903 19:18:17.127"/>
+</kw>
+<status status="NOT RUN" starttime="20240903 19:18:17.127" endtime="20240903 19:18:17.127"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Invalid car selected</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240903 19:18:17.127" endtime="20240903 19:18:17.127"/>
+</kw>
+<status status="NOT RUN" starttime="20240903 19:18:17.127" endtime="20240903 19:18:17.127"/>
+</branch>
+<status status="PASS" starttime="20240903 19:18:16.999" endtime="20240903 19:18:17.127"/>
+</if>
+<kw name="Verify Car heading" library="CarBase">
+<arg>${carheading}</arg>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${carheading_xpath}</arg>
+<arg>${carheading}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240903 19:18:17.130" level="INFO">Verifying element '//*[@id='root']/div[3]/div/div/div//h1' contains exact text 'BMW Cars'.</msg>
+<status status="PASS" starttime="20240903 19:18:17.129" endtime="20240903 19:18:17.787"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.128" endtime="20240903 19:18:17.787"/>
+</kw>
+<kw name="get car name" library="CarBase">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{carnames}</var>
+<arg>${carnames_xpath}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.804" level="INFO">@{carnames} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.90")&gt; | &lt;selenium.webdr...</msg>
+<status status="PASS" starttime="20240903 19:18:17.788" endtime="20240903 19:18:17.804"/>
+</kw>
+<for flavor="IN">
+<var>${carname}</var>
+<value>@{carnames}</value>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.90")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.820" level="INFO">${text} = BMW 7 Series</msg>
+<status status="PASS" starttime="20240903 19:18:17.805" endtime="20240903 19:18:17.820"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.820" endtime="20240903 19:18:17.820"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.804" endtime="20240903 19:18:17.820"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.91")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.834" level="INFO">${text} = BMW 5 Series</msg>
+<status status="PASS" starttime="20240903 19:18:17.821" endtime="20240903 19:18:17.834"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.834" endtime="20240903 19:18:17.834"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.820" endtime="20240903 19:18:17.834"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.92")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.867" level="INFO">${text} = BMW X1</msg>
+<status status="PASS" starttime="20240903 19:18:17.834" endtime="20240903 19:18:17.867"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.867" endtime="20240903 19:18:17.868"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.834" endtime="20240903 19:18:17.868"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.93")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.887" level="INFO">${text} = BMW 2 Series Gran Coupe</msg>
+<status status="PASS" starttime="20240903 19:18:17.868" endtime="20240903 19:18:17.887"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.887" endtime="20240903 19:18:17.888"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.868" endtime="20240903 19:18:17.888"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.94")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.906" level="INFO">${text} = BMW M4 Competition</msg>
+<status status="PASS" starttime="20240903 19:18:17.888" endtime="20240903 19:18:17.906"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.906" endtime="20240903 19:18:17.907"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.888" endtime="20240903 19:18:17.907"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.95")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.922" level="INFO">${text} = BMW 3 Series Gran Limousine</msg>
+<status status="PASS" starttime="20240903 19:18:17.908" endtime="20240903 19:18:17.922"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.922" endtime="20240903 19:18:17.923"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.907" endtime="20240903 19:18:17.923"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.96")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.934" level="INFO">${text} = BMW M340i</msg>
+<status status="PASS" starttime="20240903 19:18:17.923" endtime="20240903 19:18:17.935"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.935" endtime="20240903 19:18:17.935"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.923" endtime="20240903 19:18:17.935"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.97")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.967" level="INFO">${text} = BMW X7</msg>
+<status status="PASS" starttime="20240903 19:18:17.935" endtime="20240903 19:18:17.967"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.967" endtime="20240903 19:18:17.968"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.935" endtime="20240903 19:18:17.968"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.98")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.981" level="INFO">${text} = BMW Z4</msg>
+<status status="PASS" starttime="20240903 19:18:17.968" endtime="20240903 19:18:17.981"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.981" endtime="20240903 19:18:17.982"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.968" endtime="20240903 19:18:17.982"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.99")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:17.997" level="INFO">${text} = BMW M8</msg>
+<status status="PASS" starttime="20240903 19:18:17.982" endtime="20240903 19:18:17.997"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:17.998" endtime="20240903 19:18:17.999"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.982" endtime="20240903 19:18:17.999"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.100")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.016" level="INFO">${text} = BMW X5</msg>
+<status status="PASS" starttime="20240903 19:18:18.000" endtime="20240903 19:18:18.016"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.016" endtime="20240903 19:18:18.016"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:17.999" endtime="20240903 19:18:18.017"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.101")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.033" level="INFO">${text} = BMW XM</msg>
+<status status="PASS" starttime="20240903 19:18:18.017" endtime="20240903 19:18:18.033"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.033" endtime="20240903 19:18:18.033"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.017" endtime="20240903 19:18:18.033"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.102")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.047" level="INFO">${text} = BMW X3</msg>
+<status status="PASS" starttime="20240903 19:18:18.034" endtime="20240903 19:18:18.047"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.047" endtime="20240903 19:18:18.047"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.034" endtime="20240903 19:18:18.047"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.103")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.063" level="INFO">${text} = BMW M2</msg>
+<status status="PASS" starttime="20240903 19:18:18.048" endtime="20240903 19:18:18.063"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.063" endtime="20240903 19:18:18.064"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.047" endtime="20240903 19:18:18.064"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.104")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.078" level="INFO">${text} = BMW 6 Series GT</msg>
+<status status="PASS" starttime="20240903 19:18:18.064" endtime="20240903 19:18:18.078"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.079" endtime="20240903 19:18:18.079"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.064" endtime="20240903 19:18:18.079"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.105")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.113" level="INFO">${text} = BMW i7</msg>
+<status status="PASS" starttime="20240903 19:18:18.079" endtime="20240903 19:18:18.113"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.113" endtime="20240903 19:18:18.114"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.079" endtime="20240903 19:18:18.114"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.106")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.134" level="INFO">${text} = BMW iX1</msg>
+<status status="PASS" starttime="20240903 19:18:18.114" endtime="20240903 19:18:18.134"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.134" endtime="20240903 19:18:18.135"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.114" endtime="20240903 19:18:18.135"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.107")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.152" level="INFO">${text} = BMW i4</msg>
+<status status="PASS" starttime="20240903 19:18:18.135" endtime="20240903 19:18:18.152"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.152" endtime="20240903 19:18:18.153"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.135" endtime="20240903 19:18:18.153"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.108")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.170" level="INFO">${text} = BMW X4 M40i</msg>
+<status status="PASS" starttime="20240903 19:18:18.153" endtime="20240903 19:18:18.171"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.171" endtime="20240903 19:18:18.171"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.153" endtime="20240903 19:18:18.171"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.109")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.193" level="INFO">${text} = BMW iX</msg>
+<status status="PASS" starttime="20240903 19:18:18.172" endtime="20240903 19:18:18.193"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.194" endtime="20240903 19:18:18.194"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.171" endtime="20240903 19:18:18.194"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.110")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.211" level="INFO">${text} = BMW X3 M40i</msg>
+<status status="PASS" starttime="20240903 19:18:18.194" endtime="20240903 19:18:18.211"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.211" endtime="20240903 19:18:18.211"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.194" endtime="20240903 19:18:18.211"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.111")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.229" level="INFO">${text} = BMW i5</msg>
+<status status="PASS" starttime="20240903 19:18:18.211" endtime="20240903 19:18:18.230"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.230" endtime="20240903 19:18:18.230"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.211" endtime="20240903 19:18:18.230"/>
+</iter>
+<iter>
+<var name="${carname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d35e5eeddaac4b0d6015a1a6d8dd9c2", element="f.8D1E91D82E79DE716C8CF197608A1E25.d.EF57C7E4E3518968DAA775225D700E54.e.112")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${carname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240903 19:18:18.247" level="INFO">${text} = BMW New X3</msg>
+<status status="PASS" starttime="20240903 19:18:18.231" endtime="20240903 19:18:18.248"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240903 19:18:18.248" endtime="20240903 19:18:18.248"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.230" endtime="20240903 19:18:18.248"/>
+</iter>
+<status status="PASS" starttime="20240903 19:18:17.804" endtime="20240903 19:18:18.248"/>
+</for>
+<status status="PASS" starttime="20240903 19:18:17.787" endtime="20240903 19:18:18.248"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:03.628" endtime="20240903 19:18:18.248"/>
+</kw>
+<kw name="Finish Test Case" library="commons" type="TEARDOWN">
+<kw name="Log" library="BuiltIn">
+<arg>Ending the test case</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240903 19:18:18.250" level="INFO">Ending the test case</msg>
+<status status="PASS" starttime="20240903 19:18:18.250" endtime="20240903 19:18:18.250"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240903 19:18:18.250" endtime="20240903 19:18:21.408"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:18.250" endtime="20240903 19:18:21.408"/>
+</kw>
+<status status="PASS" starttime="20240903 19:18:03.625" endtime="20240903 19:18:21.410"/>
+</test>
+<status status="PASS" starttime="20240903 19:17:11.799" endtime="20240903 19:18:21.412"/>
+</suite>
+<status status="PASS" starttime="20240903 19:15:29.517" endtime="20240903 19:18:21.416"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="3" skip="0">All Tests</stat>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="3" skip="0" id="s1" name="FindNewCarsTest DataDriven">FindNewCarsTest DataDriven</stat>
+<stat pass="7" fail="0" skip="0" id="s1" name="FindNewCarsTest &amp; FindNewCarsTest DataDriven &amp; getCarNameTest">FindNewCarsTest &amp; FindNewCarsTest DataDriven &amp; getCarNameTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="FindNewCarsTest">FindNewCarsTest &amp; FindNewCarsTest DataDriven &amp; getCarNameTest.FindNewCarsTest</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2" name="FindNewCarsTest DataDriven">FindNewCarsTest &amp; FindNewCarsTest DataDriven &amp; getCarNameTest.FindNewCarsTest DataDriven</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s3" name="getCarNameTest">FindNewCarsTest &amp; FindNewCarsTest DataDriven &amp; getCarNameTest.getCarNameTest</stat>
 </suite>
 </statistics>
 <errors>

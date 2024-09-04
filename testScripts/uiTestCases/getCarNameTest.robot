@@ -6,7 +6,7 @@ Resource    ../../pageObjects/ToyotaCarPage.resource
 Resource    ../../pageObjects/KiaCarPage.resource
 Resource    ../../pageObjects/CarBase.resource
 
-Library     DataDriver      ../Resources/testdata.xlsx  sheet_name=FindNewCarTest
+Library     DataDriver      ../../Resources/testdata.xlsx  sheet_name=FindNewCarTest
 Test Template   Find New Cars
 Test Teardown   Finish Test Case
 
@@ -20,11 +20,11 @@ Find New Cars
     Launching Browser    ${testsiteurl}    ${browser}
     Maximize Browser Window
     Go to new car page
-    IF    "${brandname}" == "Toyota"
+    IF    '${brandname}' == 'Toyota'
     Go to Toyota
-    ELSE IF     "${brandname}" == "BMW"
+    ELSE IF     '${brandname}' == 'BMW'
     Go to BMW
-    ELSE IF     "${brandname}" == "Kia"
+    ELSE IF     '${brandname}' == 'Kia'
     Go to Kia
     ELSE
         Log To Console    Invalid car selected

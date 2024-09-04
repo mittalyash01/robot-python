@@ -10,11 +10,11 @@ platforms:
   #   osVersion: Monterey
   #   browserName: Safari
   #   browserVersion: 15.6
-parallelsPerPlatform: 1
+parallelsPerPlatform: 10
 browserstackLocal: true
 buildName: bstack-robot-demo
 buildIdentifier: ${BUILD_NUMBER}
-projectName: BrowserStack Robot
+projectName: BrowserStack Robot Demo
 debug: true
 networkLogs: true
 consoleLogs: info

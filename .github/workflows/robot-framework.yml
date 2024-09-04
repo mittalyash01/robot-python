@@ -3,9 +3,10 @@ name: Robot Framework CI
 on:
   push:
     branches:
-      - master
+      - master, WIP
   pull_request:
-  workflow_dispatch:
+    branches:
+      - master
 
 jobs:
   ubuntu-job:

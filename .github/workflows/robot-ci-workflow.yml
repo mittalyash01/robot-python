@@ -55,8 +55,13 @@ jobs:
       - name: 'Building the framework'
         run: pip install -r requirements.txt
       - name: 'Execute Tests'
-        run: browserstack-sdk robot ./testScripts/uiTestCases/FindNewCarsTest_DataDriven.robot
+        run: browserstack-sdk robot -d output ./testScripts/uiTestCases/FindNewCarsTest_DataDriven.robot
       - name: 'BrowserStackLocal Stop'  # Terminating the BrowserStackLocal tunnel connection
         uses: browserstack/github-actions/setup-local@master
         with:
           local-testing: stop
+      - name: Publish test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: robot-test-results
+          path: output
